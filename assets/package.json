@@ -1,0 +1,28 @@
+{
+	"name": "wp-mentions-links",
+	"version": "1.0.0",
+	"description": "Gutenberg autocomplete for posts and users.",
+	"main": "src/js/index.js",
+	"scripts": {
+		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
+		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+		"eslint:fix": "eslint --fix"
+	},
+	"keywords": [
+		"wp-mentions-links"
+	],
+	"author": "rtCamp",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "7.9.0",
+		"@babel/plugin-transform-react-jsx": "7.9.4",
+		"babel-loader": "8.1.0",
+		"eslint": "^5.6.1",
+		"eslint-config-wordpress": "^2.0.0",
+		"eslint-loader": "^2.1.1",
+		"cross-env": "7.0.2",
+		"webpack": "4.42.1",
+		"webpack-cli": "3.3.11",
+		"wp-pot-cli": "^1.2.1"
+	}
+}
