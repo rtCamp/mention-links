@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Mentions Links
  * Description: Gutenberg autocomplete for posts and users.
- * Plugin URI:  https://rtcamp.com
+ * Plugin URI:  https://github.com/rtCamp/wp-mentions-links
  * Author:      rtCamp
  * Author URI:  https://rtcamp.com
  * License:     GPL2
