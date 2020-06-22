@@ -36,8 +36,8 @@ const postCompleter = {
 	},
 	getOptionKeywords: ( post ) => post.title.rendered.split( /\s+/ ),
 	getOptionLabel: ( post ) => [
-		<span class="dashicons dashicons-text-page"></span>,
-		<span>&nbsp;{ ( 30 < post.title.rendered.length ? post.title.rendered.substring( 0, 30 ) + '...' : post.title.rendered ) }</span> // Add ellipsis.
+		<span key={ post.id.toString() + '-icon' } className="dashicons dashicons-text-page" />,
+		<span key={ post.id.toString() + '-name' }>&nbsp;{ ( 30 < post.title.rendered.length ? post.title.rendered.substring( 0, 30 ) + '...' : post.title.rendered ) }</span> // Add ellipsis.
 	],
 	getOptionCompletion: ( post ) => ( <a href={ post.link }>{ post.title.rendered }</a> )
 };
@@ -66,7 +66,7 @@ function filterAutcompleters( completers, blockName ) {
 
 	// Replace the render function of existing user autocompleter to add link.
 	if ( completers[ userCompleterIndex ] ) {
-		completers[ userCompleterIndex ].getOptionCompletion = ( response ) => { console.log(response); return <a href={ response.link }>{ ( response[ field ] ) }</a> };
+		completers[ userCompleterIndex ].getOptionCompletion = ( response ) => ( <a href={ response.link }>{ ( response[ field ] ) }</a> );
 	}
 
 	// Attach post autocompleter.
