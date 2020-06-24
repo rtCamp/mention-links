@@ -158,7 +158,9 @@ class Plugin_Settings {
 		// Convert options array in key => value to increase performance.
 		if ( ! empty( $option ) && is_array( $option ) ) {
 			$array = $option;
+
 			foreach ( $array as $cpt ) {
+			
 				$option[ $cpt ] = 1;
 			}
 		}
