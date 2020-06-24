@@ -25,7 +25,7 @@ const postCompleter = {
 		let returnArray = [];
 		if ( 'undefined' !== typeof wpMentionsLinks.supportedCPTs ) {
 			for ( let i in wpMentionsLinks.supportedCPTs ) {
-				returnArray = returnArray.concat( await wp.apiFetch( { path: `/wp/v2/${wpMentionsLinks.supportedCPTs[i]} ${queryString}` } ) );
+				returnArray = returnArray.concat( await wp.apiFetch( { path: `/wp/v2/${wpMentionsLinks.supportedCPTs[i]}${queryString}` } ) );
 			}
 		} else {
 			returnArray = returnArray.concat( await wp.apiFetch( { path: `/wp/v2/posts${queryString}` } ) );
