@@ -152,7 +152,9 @@ class Plugin_Settings {
 	 * @return void
 	 */
 	public function enabled_cpts_setting_cb( $args ) {
+
 		$option = get_option( WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME );
+		
 		// Convert options array in key => value to increase performance.
 		if ( ! empty( $option ) && is_array( $option ) ) {
 			$array = $option;
