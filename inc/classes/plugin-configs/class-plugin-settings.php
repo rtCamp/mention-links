@@ -172,7 +172,9 @@ class Plugin_Settings {
 
 		$is_first   = true;
 		$post_types = get_post_types( $get_post_types_args, 'objects' );
+
 		foreach ( $post_types as $key => $post_type ) {
+		
 			// The mentions are going to use rest API eventually, so we won't show CPTs which doesn't have rest_base.
 			if ( empty( $post_type->rest_base ) ) {
 				continue;
