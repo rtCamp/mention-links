@@ -146,13 +146,19 @@ class Plugin_Settings {
 	 * @return void
 	 */
 	public function enabled_cpts_setting_cb( $args ) {
+
 		$option = get_option( WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME );
+		
 		// Convert options array in key => value to increase performance.
 		if ( ! empty( $option ) && is_array( $option ) ) {
 			$array = $option;
+
 			foreach ( $array as $cpt ) {
+			
 				$option[ $cpt ] = 1;
+
 			}
+			
 		}
 
 		$get_post_types_args = array(
@@ -162,13 +168,16 @@ class Plugin_Settings {
 
 		$is_first   = true;
 		$post_types = get_post_types( $get_post_types_args, 'objects' );
+
 		foreach ( $post_types as $key => $post_type ) {
+		
 			// The mentions are going to use rest API eventually, so we won't show CPTs which doesn't have rest_base.
 			if ( empty( $post_type->rest_base ) ) {
 				continue;
 			}
 
 			$checked = '';
+			
 			// Check if option value is already saved and current post type exists in the value array.
 			// Else check if option value is not already saved and check default supported post types.
 			if ( ! empty( $option[ $post_type->rest_base ] ) || ( ! is_array( $option ) && ! empty( $this->default_supported_post_types[ $post_type->name ] ) ) ) {
