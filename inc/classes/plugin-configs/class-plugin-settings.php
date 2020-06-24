@@ -63,12 +63,6 @@ class Plugin_Settings {
 			return;
 		}
 
-		$settings_updated = filter_input( INPUT_GET, 'settings-updated', FILTER_SANITIZE_STRING );
-		if ( ! empty( $settings_updated ) ) {
-			add_settings_error( 'wpml_messages', 'wpml_messages', __( 'Settings Saved', 'wp-mentions-links' ), 'updated' );
-		}
-
-		settings_errors( 'wpml_messages' );
 		?>
 		<div class="wrap">
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
