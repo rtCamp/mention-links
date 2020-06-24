@@ -179,6 +179,7 @@ class Plugin_Settings {
 			}
 
 			$checked = '';
+			
 			// Check if option value is already saved and current post type exists in the value array.
 			// Else check if option value is not already saved and check default supported post types.
 			if ( ! empty( $option[ $post_type->rest_base ] ) || ( ! is_array( $option ) && ! empty( $this->default_supported_post_types[ $post_type->name ] ) ) ) {
