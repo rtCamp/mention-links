@@ -25,11 +25,11 @@ const postCompleter = {
 		let returnArray = [];
 		if ( 'undefined' !== typeof wpMentionsLinks.supportedCPTs ) {
 			for ( let i in wpMentionsLinks.supportedCPTs ) {
-				returnArray = returnArray.concat( await wp.apiFetch( { path: '/wp/v2/' + wpMentionsLinks.supportedCPTs[i] + '' + queryString } ) );
+				returnArray = returnArray.concat( await wp.apiFetch( { path: `/wp/v2/${wpMentionsLinks.supportedCPTs[i]} ${queryString}` } ) );
 			}
 		} else {
-			returnArray = returnArray.concat( await wp.apiFetch( { path: '/wp/v2/posts' + queryString } ) );
-			returnArray = returnArray.concat( await wp.apiFetch( { path: '/wp/v2/pages' + queryString } ) );
+			returnArray = returnArray.concat( await wp.apiFetch( { path: `/wp/v2/posts${queryString}` } ) );
+			returnArray = returnArray.concat( await wp.apiFetch( { path: `/wp/v2/pages${queryString}` } ) );
 		}
 
 		return returnArray;
@@ -44,7 +44,7 @@ const postCompleter = {
 
 /**
  * Hook to modify the existing user autocomplete for username hyperlink and attach post autocomplete.
- * @param {array}  completers Aray of autocompleter objects.
+ * @param {array}  completers Array of autocompleter objects.
  * @param {string} blockName  Name of the block.
  *
  * @return {array} Array of autocompleter objects.

@@ -139,7 +139,7 @@ class Plugin_Settings {
 			<option value="username" <?php ( selected( $option, 'username' ) ); ?>><?php esc_html_e( 'Username', 'wp-mentions-links' ); ?></option>
 		</select>
 		<p class="description">
-			<?php esc_html_e( 'Whether to show user\'s display-name or username while mentioning them.' ); ?>
+			<?php esc_html_e( 'Whether to show user\'s display-name or username while mentioning them.', 'wp-mentions-links' ); ?>
 		</p>
 		<?php
 	}
@@ -205,7 +205,7 @@ class Plugin_Settings {
 
 		?>
 		<p class="description">
-			<?php esc_html_e( 'If a post type doesn\'t support REST API, then it won\'t be displayed here.' ); ?>
+			<?php esc_html_e( 'If a post type doesn\'t support REST API, then it won\'t be displayed here.', 'wp-mentions-links' ); ?>
 		</p>
 		<?php
 	}

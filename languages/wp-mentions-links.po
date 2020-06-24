@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-06-09T13:32:47+00:00\n"
+"POT-Creation-Date: 2020-06-24T13:19:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: wp-mentions-links\n"
@@ -56,4 +56,12 @@ msgstr ""
 
 #: inc/classes/plugin-configs/class-plugin-settings.php:139
 msgid "Username"
+msgstr ""
+
+#: inc/classes/plugin-configs/class-plugin-settings.php:142
+msgid "Whether to show user's display-name or username while mentioning them."
+msgstr ""
+
+#: inc/classes/plugin-configs/class-plugin-settings.php:208
+msgid "If a post type doesn't support REST API, then it won't be displayed here."
 msgstr ""
