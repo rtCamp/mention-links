@@ -162,7 +162,9 @@ class Plugin_Settings {
 			foreach ( $array as $cpt ) {
 			
 				$option[ $cpt ] = 1;
+
 			}
+			
 		}
 
 		$get_post_types_args = array(
