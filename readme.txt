@@ -21,7 +21,7 @@ This plugins adds a settings page under Settings -> WP Mentions Links.
 1. **Display username or display-name:** This setting allows you choose whether to show user's display-name or username when mentioning a user in a post.
 2. **Custom Post Types support:** Checking post types here will give you suggestions of posts from these post types.
 
-**Note:** The posts suggestion list is retrieved from the WordPress' REST API, so if a particular post type doesn't support REST API then you might not see it in **Custom Post Types support**.
+**Note:** The posts suggestion list is retrieved from the WordPress' REST API, so if a particular post type doesn't support REST API then you might not see it in **Custom Post Types support** setting.
 
 == Installation ==
 
