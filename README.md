@@ -25,6 +25,10 @@ This plugin lets you mention a user or a post (including Custom Post Types) in a
 
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
+## Description ##
+While writing contents from the Block editor, type `@` to get suggestions of users. On selecting a user it'll create a link to authors page of that user.  
+To mention a post, type `#` and it'll give you the list of all matching posts. On selecting a post it'll create a link to the single post page.
+
 ### Screenshots ###
 
 Plugin features:
@@ -34,10 +38,6 @@ Plugin features:
 Settings page (wp-admin -> Settings -> WP Mentions Links):
 
 ![Settings page](/screenshots/screenshot-2.png?raw=true)
-
-## Description ##
-While writing contents from the Block editor, type `@` to get suggestions of users. On selecting a user it'll create a link to authors page of that user.  
-To mention a post, type `#` and it'll give you the list of all matching posts. On selecting a post it'll create a link to the single post page.
 
 ### Settings ###
 This plugins adds a settings page under Settings -> WP Mentions Links.
