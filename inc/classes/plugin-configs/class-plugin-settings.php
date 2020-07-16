@@ -96,7 +96,8 @@ class Plugin_Settings {
 			__( 'Display username or display-name', 'wp-mentions-links' ),
 			[ $this, 'field_setting_cb' ],
 			WP_MENTIONS_LINKS_PLUGIN_SLUG,
-			'wpml_setting_section'
+			'wpml_setting_section',
+			[ 'label_for' => WP_MENTIONS_LINKS_FIELD_SETTING_NAME ]
 		);
 
 		register_setting( WP_MENTIONS_LINKS_PLUGIN_SLUG, WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME );
@@ -105,7 +106,8 @@ class Plugin_Settings {
 			__( 'Custom Post Types support', 'wp-mentions-links' ),
 			[ $this, 'enabled_cpts_setting_cb' ],
 			WP_MENTIONS_LINKS_PLUGIN_SLUG,
-			'wpml_setting_section'
+			'wpml_setting_section',
+			[ 'label_for' => WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME ]
 		);
 	}
 
