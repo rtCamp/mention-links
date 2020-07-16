@@ -96,7 +96,8 @@ class Plugin_Settings {
 			__( 'Display username or display-name', 'wp-mentions-links' ),
 			[ $this, 'field_setting_cb' ],
 			WP_MENTIONS_LINKS_PLUGIN_SLUG,
-			'wpml_setting_section'
+			'wpml_setting_section',
+			[ 'label_for' => WP_MENTIONS_LINKS_FIELD_SETTING_NAME ]
 		);
 
 		register_setting( WP_MENTIONS_LINKS_PLUGIN_SLUG, WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME );
@@ -105,7 +106,8 @@ class Plugin_Settings {
 			__( 'Custom Post Types support', 'wp-mentions-links' ),
 			[ $this, 'enabled_cpts_setting_cb' ],
 			WP_MENTIONS_LINKS_PLUGIN_SLUG,
-			'wpml_setting_section'
+			'wpml_setting_section',
+			[ 'label_for' => WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME ]
 		);
 	}
 
@@ -154,11 +156,8 @@ class Plugin_Settings {
 			$array = $option;
 
 			foreach ( $array as $cpt ) {
-			
 				$option[ $cpt ] = 1;
-
 			}
-			
 		}
 
 		$get_post_types_args = array(
@@ -170,17 +169,21 @@ class Plugin_Settings {
 		$post_types = get_post_types( $get_post_types_args, 'objects' );
 
 		foreach ( $post_types as $key => $post_type ) {
-		
-			// The mentions are going to use rest API eventually, so we won't show CPTs which doesn't have rest_base.
-			if ( empty( $post_type->rest_base ) ) {
+			if ( 'attachment' === $key ) {
 				continue;
+			}
+		
+			$rest_base = $post_type->name;
+			// The mentions are going to use rest API eventually, so we won't show CPTs which doesn't have rest_base.
+			if ( ! empty( $post_type->rest_base ) ) {
+				$rest_base = $post_type->rest_base;
 			}
 
 			$checked = '';
 			
 			// Check if option value is already saved and current post type exists in the value array.
 			// Else check if option value is not already saved and check default supported post types.
-			if ( ! empty( $option[ $post_type->rest_base ] ) || ( ! is_array( $option ) && ! empty( $this->default_supported_post_types[ $post_type->name ] ) ) ) {
+			if ( ! empty( $option[ $rest_base ] ) || ( ! is_array( $option ) && ! empty( $this->default_supported_post_types[ $post_type->name ] ) ) ) {
 				$checked = 'checked';
 			}
 
@@ -192,8 +195,8 @@ class Plugin_Settings {
 			}
 			?>
 			<li>
-				<label for="<?php echo esc_attr( $post_type->rest_base ); ?>_checkbox">
-					<input name="<?php echo esc_attr( WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME ); ?>[]" type="checkbox" id="<?php echo esc_attr( $post_type->rest_base ); ?>_checkbox" value="<?php echo esc_attr( $post_type->rest_base ); ?>" <?php echo esc_attr( $checked ); ?>>
+				<label for="<?php echo esc_attr( $rest_base ); ?>_checkbox">
+					<input name="<?php echo esc_attr( WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME ); ?>[]" type="checkbox" id="<?php echo esc_attr( $rest_base ); ?>_checkbox" value="<?php echo esc_attr( $rest_base ); ?>" <?php echo esc_attr( $checked ); ?>>
 					<?php echo esc_html( $post_type->label ); ?>
 				</label>
 			</li>

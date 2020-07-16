@@ -26,6 +26,20 @@ define( 'WP_MENTIONS_LINKS_FIELD_SETTING_NAME', 'wpml_user_field_to_use' );
 define( 'WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME', 'wpml_enabled_cpts' );
 
 /**
+ * Link to settings page from plugins screen.
+ *
+ * @param array $links Array of links.
+ *
+ * @return array Modified array of links.
+ */
+function wp_mentions_links_plugin_action_links( $links ) {
+	$links[] = sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'options-general.php?page=' . WP_MENTIONS_LINKS_PLUGIN_SLUG ) ), __( 'Settings', 'wp-mentions-links' ) );
+
+	return $links;
+}
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'wp_mentions_links_plugin_action_links' );
+
+/**
  * To load plugin manifest class.
  *
  * @return void
