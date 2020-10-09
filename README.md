@@ -33,11 +33,11 @@ To mention a post, type `#` and it'll give you the list of all matching posts. O
 
 Plugin features:
 
-![Plugin features](/screenshots/screenshot-1.gif?raw=true)
+![Plugin features](/assets/screenshot-1.gif?raw=true)
 
 Settings page (wp-admin -> Settings -> WP Mentions Links):
 
-![Settings page](/screenshots/screenshot-2.png?raw=true)
+![Settings page](/assets/screenshot-2.png?raw=true)
 
 ### Settings ###
 This plugins adds a settings page under Settings -> WP Mentions Links.
