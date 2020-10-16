@@ -5,7 +5,7 @@
 # Mention Links
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-This plugin lets you mention a user or a post (including Custom Post Types) in a post content from the Block editor.
+This plugin lets you mention a user or a post (including Custom Post Types) in a post content from the Block editor. Type `@` to link to an author or `#` to link to a post, page, or custom post type.
 
 **Author:** rtCamp
 
