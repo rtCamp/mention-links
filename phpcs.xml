@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="wp-mentions-links">
+<ruleset name="wp-mention-links">
 	<description>WordPress and VIP Go Coding Standards</description>
 
 	<rule ref="WordPress">

@@ -1,33 +1,64 @@
-=== WP Mentions Links ===
+=== Mention Links ===
 Contributors: rtcamp, sid177, dharmin
 Tags: Mentions, User mentions, Post mentions, Custom post types mentions, CPT mentions
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 7.0
 Stable tag: 1.0
 License: GPLv2 or later (of course!)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin lets you mention a user or a post (including Custom Post Types) in a post content from the Block editor.
+This plugin lets you mention a user or a post (including Custom Post Types) in post content from the block editor. Type `@` to link to an author or `#` to link to a post, page, or custom post type.
 
 == Description ==
 
-While writing contents from the Block editor, type `@` to get suggestions of users. On selecting a user it'll create a link to authors page of that user.  
+While writing contents from the block editor, type `@` to get suggestions of users. On selecting a user it'll create a link to authors page of that user.  
 To mention a post, type `#` and it'll give you the list of all matching posts. On selecting a post it'll create a link to the single post page.
 
-== Settings ==
-This plugins adds a settings page under Settings -> WP Mentions Links.
+= Settings =
+This plugins adds a settings page under **Settings -> Mention Links**.
 
 1. **Display username or display-name:** This setting allows you choose whether to show user's display-name or username when mentioning a user in a post.
 2. **Custom Post Types support:** Checking post types here will give you suggestions of posts from these post types.
 
-**Note:** The posts suggestion list is retrieved from the WordPress' REST API, so if a particular post type doesn't support REST API then you might not see it in **Custom Post Types support** setting.
+**Note:** The posts suggestion list is retrieved from the WordPress REST API, so if a particular post type doesn't support REST API then you might not see it in **Custom Post Types support** setting.
+
+= BTW, We're Hiring! =
+
+[Join us at rtCamp, we specialize in providing high performance enterprise WordPress solutions](https://rtcamp.com/)
 
 == Installation ==
 
 1.  Extract the zip file.
 2.  Upload it to the `/wp-content/plugins/` directory in your WordPress installation.
-3.  Activate the WP Mentions Links from your Plugins page.
+3.  Activate the Mention Links from your Plugins page.
+
+== Frequently Asked Questions ==
+ 
+= Reporting a bug 🐞 =
+ 
+Before creating a new issue, do browse through the [existing issues](https://github.com/rtCamp/wp-mention-links/issues) for resolution or upcoming fixes. 
+
+If you still need to [log an issue](https://github.com/rtCamp/wp-mention-links/issues/new), making sure to include as much detail as you can, including clear steps to reproduce the issue, if possible.
+ 
+= Creating a pull request =
+ 
+Want to contribute a new feature? Start a conversation by [logging an issue](https://github.com/rtCamp/wp-mention-links/issues).
+
+Once you're ready to send a pull request, please run through the following checklist: 
+
+1. Browse through the [existing issues](https://github.com/rtCamp/wp-mention-links/issues) for anything related to what you want to work on. If you don't find any related issues, open a new one.
+
+2. Fork this repository.
+
+3. Create a branch from `develop` for each issue you'd like to address and commit your changes.
+
+4. Push the code changes from your local clone to your fork.
+
+5. Open a pull request and that's it! We'll respond with feedback as soon as possible (Isn't collaboration a great thing? 😌)
+
+6. Once your pull request has passed final code review and tests, it will be merged into `develop` and be in the pipeline for the next release. Props to you! 🎉
+
 
 == Screenshots ==
 
@@ -36,7 +67,7 @@ This plugins adds a settings page under Settings -> WP Mentions Links.
 
 == Important Links ==
 
-* [GitHub](https://github.com/rtCamp/wp-mentions-links) - Please mention your wordpress.org username when sending pull requests.
+* [GitHub](https://github.com/rtCamp/wp-mention-links) - Please mention your wordpress.org username when sending pull requests.
 
 == License ==
 
@@ -47,9 +78,7 @@ Same [GPL](http://www.gnu.org/licenses/gpl-2.0.txt) that WordPress uses!
 = 1.0 =
 * Initial release
 
-== See room for improvement? ==
-
-Great! There are several ways you can get involved to help make this plugin better:
-
-1. **Report Bugs:** If you find a bug, error or other problem, please report it! You can do this by [creating a new topic](https://github.com/rtCamp/wp-mentions-links/issues) in the issue tracker.
-2. **Suggest New Features:** Have an awesome idea? Please share it! Simply [create a new topic](https://github.com/rtCamp/wp-mentions-links/issues) in the issure tracker to express your thoughts on why the feature should be included and get a discussion going around your idea.
+== Upgrade Notice ==
+ 
+= 1.0 =
+Initial release.

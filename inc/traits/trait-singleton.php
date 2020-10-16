@@ -22,10 +22,10 @@
  *
  * If you specifically need multiple objects, then use a normal class.
  *
- * @package wp-mentions-links
+ * @package wp-mention-links
  */
 
-namespace WP_Mentions_Links\Inc\Traits;
+namespace Mention_Links\Inc\Traits;
 
 trait Singleton {
 

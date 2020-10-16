@@ -1,8 +1,8 @@
 <p align="center">
-<a href="https://rtcamp.com/?ref=wp-mentions-links-repo" target="_blank"><img width="200"src="https://rtcamp.com/wp-content/themes/rtcamp-v9/assets/img/site-logo-black.svg"></a>
+<a href="https://rtcamp.com/?ref=wp-mention-links-repo" target="_blank"><img width="200"src="https://rtcamp.com/wp-content/themes/rtcamp-v9/assets/img/site-logo-black.svg"></a>
 </p>
 
-# WP Mentions Links - v1.0
+# Mention Links
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 This plugin lets you mention a user or a post (including Custom Post Types) in a post content from the Block editor.
@@ -33,14 +33,14 @@ To mention a post, type `#` and it'll give you the list of all matching posts. O
 
 Plugin features:
 
-![Plugin features](/screenshots/screenshot-1.gif?raw=true)
+![Plugin features](/assets/screenshot-1.gif?raw=true)
 
-Settings page (wp-admin -> Settings -> WP Mentions Links):
+Settings page (wp-admin -> Settings -> Mention Links):
 
-![Settings page](/screenshots/screenshot-2.png?raw=true)
+![Settings page](/assets/screenshot-2.png?raw=true)
 
 ### Settings ###
-This plugins adds a settings page under Settings -> WP Mentions Links.
+This plugins adds a settings page under Settings -> Mention Links.
 1. **Display username or display-name:** This setting allows you choose whether to show user's display-name or username when mentioning a user in a post.
 2. **Custom Post Types support:** Checking post types here will give you suggestions of posts from these post types.
 
@@ -50,23 +50,23 @@ This plugins adds a settings page under Settings -> WP Mentions Links.
 
 1. Extract the zip file.
 2. Upload it to the `/wp-content/plugins/` directory in your WordPress installation.
-3. Activate the WP Mentions Links from your Plugins page.
+3. Activate the Mention Links from your Plugins page.
 
 ## Contribute
 
 ### Reporting a bug 🐞
 
-Before creating a new issue, do browse through the [existing issues](https://github.com/rtCamp/wp-mentions-links/issues) for resolution or upcoming fixes. 
+Before creating a new issue, do browse through the [existing issues](https://github.com/rtCamp/wp-mention-links/issues) for resolution or upcoming fixes. 
 
-If you still need to [log an issue](https://github.com/rtCamp/wp-mentions-links/issues/new), making sure to include as much detail as you can, including clear steps to reproduce your issue if possible.
+If you still need to [log an issue](https://github.com/rtCamp/wp-mention-links/issues/new), making sure to include as much detail as you can, including clear steps to reproduce your issue if possible.
 
 ### Creating a pull request
 
-Want to contribute a new feature? Start a conversation by logging an [issue](https://github.com/rtCamp/wp-mentions-links/issues).
+Want to contribute a new feature? Start a conversation by logging an [issue](https://github.com/rtCamp/wp-mention-links/issues).
 
 Once you're ready to send a pull request, please run through the following checklist: 
 
-1. Browse through the [existing issues](https://github.com/rtCamp/wp-mentions-links/issues) for anything related to what you want to work on. If you don't find any related issues, open a new one.
+1. Browse through the [existing issues](https://github.com/rtCamp/wp-mention-links/issues) for anything related to what you want to work on. If you don't find any related issues, open a new one.
 
 1. Fork this repository.
 

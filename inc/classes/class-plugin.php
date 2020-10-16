@@ -2,12 +2,12 @@
 /**
  * Plugin manifest class.
  *
- * @package wp-mentions-links
+ * @package wp-mention-links
  */
 
-namespace WP_Mentions_Links\Inc;
+namespace Mention_Links\Inc;
 
-use \WP_Mentions_Links\Inc\Traits\Singleton;
+use \Mention_Links\Inc\Traits\Singleton;
 
 /**
  * Class Plugin
