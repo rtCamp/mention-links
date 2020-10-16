@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://rtcamp.com/?ref=wp-mention-links-repo" target="_blank"><img width="200"src="https://rtcamp.com/wp-content/themes/rtcamp-v9/assets/img/site-logo-black.svg"></a>
+<a href="https://rtcamp.com/?ref=mention-links-repo" target="_blank"><img width="200"src="https://rtcamp.com/wp-content/themes/rtcamp-v9/assets/img/site-logo-black.svg"></a>
 </p>
 
 # Mention Links

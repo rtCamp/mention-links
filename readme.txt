@@ -25,7 +25,7 @@ This plugins adds a settings page under **Settings -> Mention Links**.
 
 = BTW, We're Hiring! =
 
-[Join us at rtCamp, we specialize in providing high performance enterprise WordPress solutions](https://rtcamp.com/)
+[Join us at rtCamp, we specialize in providing high performance enterprise WordPress solutions](https://rtcamp.com/?ref=mention-links-repo)
 
 == Installation ==
 
