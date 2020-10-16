@@ -2,13 +2,13 @@
 /**
  * To load all classes of third party plugin configuration.
  *
- * @package wp-mentions-links
+ * @package wp-mention-links
  */
 
-namespace WP_Mentions_Links\Inc;
+namespace Mention_Links\Inc;
 
-use WP_Mentions_Links\Inc\Traits\Singleton;
-use WP_Mentions_Links\Inc\Plugin_Configs\Plugin_Settings;
+use Mention_Links\Inc\Traits\Singleton;
+use Mention_Links\Inc\Plugin_Configs\Plugin_Settings;
 
 /**
  * Class Plugin_Configs

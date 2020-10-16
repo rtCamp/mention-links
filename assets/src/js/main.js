@@ -1,7 +1,7 @@
 /**
  * Main scripts, loaded on all pages.
  *
- * @package wp-mentions-links
+ * @package wp-mention-links
  */
 
 /**

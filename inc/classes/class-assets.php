@@ -2,12 +2,12 @@
 /**
  * Assets class.
  *
- * @package wp-mentions-links
+ * @package wp-mention-links
  */
 
-namespace WP_Mentions_Links\Inc;
+namespace Mention_Links\Inc;
 
-use WP_Mentions_Links\Inc\Traits\Singleton;
+use Mention_Links\Inc\Traits\Singleton;
 
 /**
  * Class Assets
@@ -44,26 +44,26 @@ class Assets {
 	 */
 	public function block_enqueue_scripts() {
 		$time = time();
-		$file = path_join( WP_MENTIONS_LINKS_PATH, 'assets/build/js/main.min.js' );
+		$file = path_join( MENTION_LINKS_PATH, 'assets/build/js/main.min.js' );
 		if ( file_exists( $file ) ) {
 			$time = filemtime( $file );
 		}
 
 		wp_enqueue_script(
 			'wp-mentions-hook-js',
-			WP_MENTIONS_LINKS_URL . '/assets/build/js/main.min.js',
+			MENTION_LINKS_URL . '/assets/build/js/main.min.js',
 			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
 			$time,
 			true
 		);
 		$localize_data = array();
 
-		$supported_cpts = get_option( WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME );
+		$supported_cpts = get_option( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME );
 		if ( ! empty( $supported_cpts ) && is_array( $supported_cpts ) ) {
 			$localize_data['supportedCPTs'] = $supported_cpts;
 		}
 		
-		$selected_field = get_option( WP_MENTIONS_LINKS_FIELD_SETTING_NAME );
+		$selected_field = get_option( MENTION_LINKS_FIELD_SETTING_NAME );
 		if ( ! empty( $selected_field ) ) {
 			$localize_data['selectedUserField'] = $selected_field;
 		}

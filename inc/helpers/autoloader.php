@@ -2,10 +2,10 @@
 /**
  * Autoloader file for plugin.
  *
- * @package wp-mentions-links
+ * @package wp-mention-links
  */
 
-namespace WP_Mentions_Links\Inc\Helpers;
+namespace Mention_Links\Inc\Helpers;
 
 /**
  * Auto loader function.
@@ -17,7 +17,7 @@ namespace WP_Mentions_Links\Inc\Helpers;
 function autoloader( $resource = '' ) {
 
 	$resource_path  = false;
-	$namespace_root = 'WP_Mentions_Links\\';
+	$namespace_root = 'Mention_Links\\';
 	$resource       = trim( $resource, '\\' );
 
 	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
@@ -73,7 +73,7 @@ function autoloader( $resource = '' ) {
 				break;
 		}
 
-		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit( WP_MENTIONS_LINKS_PATH ), $directory, $file_name );
+		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit( MENTION_LINKS_PATH ), $directory, $file_name );
 
 	}
 
@@ -86,4 +86,4 @@ function autoloader( $resource = '' ) {
 
 }
 
-spl_autoload_register( '\WP_Mentions_Links\Inc\Helpers\autoloader' );
+spl_autoload_register( '\Mention_Links\Inc\Helpers\autoloader' );

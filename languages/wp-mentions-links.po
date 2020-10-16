@@ -1,9 +1,9 @@
 # Copyright (C) 2020 rtCamp
-# This file is distributed under the same license as the WP Mentions Links plugin.
+# This file is distributed under the same license as the Mention Links plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Mentions Links 1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-mentions-links\n"
+"Project-Id-Version: Mention Links 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-mention-links\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,14 +12,14 @@ msgstr ""
 "POT-Creation-Date: 2020-06-24T13:19:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: wp-mentions-links\n"
+"X-Domain: wp-mention-links\n"
 
 #. Plugin Name of the plugin
-msgid "WP Mentions Links"
+msgid "Mention Links"
 msgstr ""
 
 #. Plugin URI of the plugin
-msgid "https://github.com/rtCamp/wp-mentions-links"
+msgid "https://github.com/rtCamp/wp-mention-links"
 msgstr ""
 
 #. Description of the plugin

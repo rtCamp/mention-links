@@ -2,12 +2,12 @@
 /**
  * Declares a class which adds custom settings page under default Setting page in wp-admin.
  *
- * @package wp-mentions-links
+ * @package wp-mention-links
  */
 
-namespace WP_Mentions_Links\Inc\Plugin_Configs;
+namespace Mention_Links\Inc\Plugin_Configs;
 
-use WP_Mentions_Links\Inc\Traits\Singleton;
+use Mention_Links\Inc\Traits\Singleton;
 
 /**
  * Class Plugin_Settings
@@ -45,16 +45,16 @@ class Plugin_Settings {
 	public function admin_menu() {
 		add_submenu_page(
 			'options-general.php',
-			'WP Mentions Links Settings',
-			'WP Mentions Links',
+			'Mention Links Settings',
+			'Mention Links',
 			'manage_options',
-			WP_MENTIONS_LINKS_PLUGIN_SLUG,
+			MENTION_LINKS_PLUGIN_SLUG,
 			[ $this, 'settings_page_html' ]
 		);
 	}
 
 	/**
-	 * Callback for WP Mentions Links Settings page.
+	 * Callback for Mention Links Settings page.
 	 *
 	 * @return void
 	 */
@@ -68,9 +68,9 @@ class Plugin_Settings {
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 			<form action="options.php" method="post">
 				<?php
-				settings_fields( WP_MENTIONS_LINKS_PLUGIN_SLUG );
-				do_settings_sections( WP_MENTIONS_LINKS_PLUGIN_SLUG );
-				submit_button( __( 'Save Settings', 'wp-mentions-links' ) );
+				settings_fields( MENTION_LINKS_PLUGIN_SLUG );
+				do_settings_sections( MENTION_LINKS_PLUGIN_SLUG );
+				submit_button( __( 'Save Settings', 'wp-mention-links' ) );
 				?>
 			</form>
 		</div>
@@ -87,27 +87,27 @@ class Plugin_Settings {
 			'wpml_setting_section',
 			'',
 			[ $this, 'wpml_setting_section_cb' ],
-			WP_MENTIONS_LINKS_PLUGIN_SLUG
+			MENTION_LINKS_PLUGIN_SLUG
 		);
 	
-		register_setting( WP_MENTIONS_LINKS_PLUGIN_SLUG, WP_MENTIONS_LINKS_FIELD_SETTING_NAME );
+		register_setting( MENTION_LINKS_PLUGIN_SLUG, MENTION_LINKS_FIELD_SETTING_NAME );
 		add_settings_field(
-			WP_MENTIONS_LINKS_FIELD_SETTING_NAME,
-			__( 'Display username or display-name', 'wp-mentions-links' ),
+			MENTION_LINKS_FIELD_SETTING_NAME,
+			__( 'Display username or display-name', 'wp-mention-links' ),
 			[ $this, 'field_setting_cb' ],
-			WP_MENTIONS_LINKS_PLUGIN_SLUG,
+			MENTION_LINKS_PLUGIN_SLUG,
 			'wpml_setting_section',
-			[ 'label_for' => WP_MENTIONS_LINKS_FIELD_SETTING_NAME ]
+			[ 'label_for' => MENTION_LINKS_FIELD_SETTING_NAME ]
 		);
 
-		register_setting( WP_MENTIONS_LINKS_PLUGIN_SLUG, WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME );
+		register_setting( MENTION_LINKS_PLUGIN_SLUG, MENTION_LINKS_ENABLED_CPTS_SETTING_NAME );
 		add_settings_field(
-			WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME,
-			__( 'Custom Post Types support', 'wp-mentions-links' ),
+			MENTION_LINKS_ENABLED_CPTS_SETTING_NAME,
+			__( 'Custom Post Types support', 'wp-mention-links' ),
 			[ $this, 'enabled_cpts_setting_cb' ],
-			WP_MENTIONS_LINKS_PLUGIN_SLUG,
+			MENTION_LINKS_PLUGIN_SLUG,
 			'wpml_setting_section',
-			[ 'label_for' => WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME ]
+			[ 'label_for' => MENTION_LINKS_ENABLED_CPTS_SETTING_NAME ]
 		);
 	}
 
@@ -128,14 +128,14 @@ class Plugin_Settings {
 	 * @return void
 	 */
 	public function field_setting_cb( $args ) {
-		$option = get_option( WP_MENTIONS_LINKS_FIELD_SETTING_NAME );
+		$option = get_option( MENTION_LINKS_FIELD_SETTING_NAME );
 		?>
-		<select id="<?php echo esc_attr( WP_MENTIONS_LINKS_FIELD_SETTING_NAME ); ?>" name="<?php echo esc_attr( WP_MENTIONS_LINKS_FIELD_SETTING_NAME ); ?>">
-			<option value="displayname" <?php ( selected( $option, 'displayname' ) ); ?>><?php esc_html_e( 'Display Name', 'wp-mentions-links' ); ?></option>
-			<option value="username" <?php ( selected( $option, 'username' ) ); ?>><?php esc_html_e( 'Username', 'wp-mentions-links' ); ?></option>
+		<select id="<?php echo esc_attr( MENTION_LINKS_FIELD_SETTING_NAME ); ?>" name="<?php echo esc_attr( MENTION_LINKS_FIELD_SETTING_NAME ); ?>">
+			<option value="displayname" <?php ( selected( $option, 'displayname' ) ); ?>><?php esc_html_e( 'Display Name', 'wp-mention-links' ); ?></option>
+			<option value="username" <?php ( selected( $option, 'username' ) ); ?>><?php esc_html_e( 'Username', 'wp-mention-links' ); ?></option>
 		</select>
 		<p class="description">
-			<?php esc_html_e( 'Whether to show user\'s display-name or username while mentioning them.', 'wp-mentions-links' ); ?>
+			<?php esc_html_e( 'Whether to show user\'s display-name or username while mentioning them.', 'wp-mention-links' ); ?>
 		</p>
 		<?php
 	}
@@ -149,7 +149,7 @@ class Plugin_Settings {
 	 */
 	public function enabled_cpts_setting_cb( $args ) {
 
-		$option = get_option( WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME );
+		$option = get_option( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME );
 		
 		// Convert options array in key => value to increase performance.
 		if ( ! empty( $option ) && is_array( $option ) ) {
@@ -196,7 +196,7 @@ class Plugin_Settings {
 			?>
 			<li>
 				<label for="<?php echo esc_attr( $rest_base ); ?>_checkbox">
-					<input name="<?php echo esc_attr( WP_MENTIONS_LINKS_ENABLED_CPTS_SETTING_NAME ); ?>[]" type="checkbox" id="<?php echo esc_attr( $rest_base ); ?>_checkbox" value="<?php echo esc_attr( $rest_base ); ?>" <?php echo esc_attr( $checked ); ?>>
+					<input name="<?php echo esc_attr( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME ); ?>[]" type="checkbox" id="<?php echo esc_attr( $rest_base ); ?>_checkbox" value="<?php echo esc_attr( $rest_base ); ?>" <?php echo esc_attr( $checked ); ?>>
 					<?php echo esc_html( $post_type->label ); ?>
 				</label>
 			</li>
@@ -211,7 +211,7 @@ class Plugin_Settings {
 
 		?>
 		<p class="description">
-			<?php esc_html_e( 'If a post type doesn\'t support REST API, then it won\'t be displayed here.', 'wp-mentions-links' ); ?>
+			<?php esc_html_e( 'If a post type doesn\'t support REST API, then it won\'t be displayed here.', 'wp-mention-links' ); ?>
 		</p>
 		<?php
 	}

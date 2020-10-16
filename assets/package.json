@@ -1,5 +1,5 @@
 {
-	"name": "wp-mentions-links",
+	"name": "wp-mention-links",
 	"version": "1.0.0",
 	"description": "Gutenberg autocomplete for posts and users.",
 	"main": "src/js/index.js",
@@ -7,11 +7,11 @@
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
 		"eslint:fix": "eslint --fix",
-		"language:make-po": "wp i18n make-pot ../ --exclude=\"assets\" ../languages/wp-mentions-links.po",
+		"language:make-po": "wp i18n make-pot ../ --exclude=\"assets\" ../languages/wp-mention-links.po",
 		"language": "run-s \"language:*\""
 	},
 	"keywords": [
-		"wp-mentions-links"
+		"wp-mention-links"
 	],
 	"author": "rtCamp",
 	"license": "ISC",
