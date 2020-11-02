@@ -4,7 +4,7 @@ Tags: Mentions, User mentions, Post mentions, Custom post types mentions, CPT me
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later (of course!)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,8 +12,8 @@ This plugin lets you mention a user or a post (including Custom Post Types) in p
 
 == Description ==
 
-While writing contents from the block editor, type `@` to get suggestions of users. On selecting a user it'll create a link to authors page of that user.  
-To mention a post, type `#` and it'll give you the list of all matching posts. On selecting a post it'll create a link to the single post page.
+While writing contents from the block editor, type `@` to get suggestions of users. On selecting a user it will create a link to authors page of that user.  
+To mention a post, type `#` and it will give you the list of all matching posts. On selecting a post it will create a link to the single post page.
 
 = Settings =
 This plugins adds a settings page under **Settings -> Mention Links**.
@@ -37,17 +37,17 @@ This plugins adds a settings page under **Settings -> Mention Links**.
  
 = Reporting a bug 🐞 =
  
-Before creating a new issue, do browse through the [existing issues](https://github.com/rtCamp/wp-mention-links/issues) for resolution or upcoming fixes. 
+Before creating a new issue, do browse through the [existing issues](https://github.com/rtCamp/mention-links/issues) for resolution or upcoming fixes. 
 
-If you still need to [log an issue](https://github.com/rtCamp/wp-mention-links/issues/new), making sure to include as much detail as you can, including clear steps to reproduce the issue, if possible.
+If you still need to [log an issue](https://github.com/rtCamp/mention-links/issues/new), making sure to include as much detail as you can, including clear steps to reproduce the issue, if possible.
  
 = Creating a pull request =
  
-Want to contribute a new feature? Start a conversation by [logging an issue](https://github.com/rtCamp/wp-mention-links/issues).
+Want to contribute a new feature? Start a conversation by [logging an issue](https://github.com/rtCamp/mention-links/issues).
 
 Once you're ready to send a pull request, please run through the following checklist: 
 
-1. Browse through the [existing issues](https://github.com/rtCamp/wp-mention-links/issues) for anything related to what you want to work on. If you don't find any related issues, open a new one.
+1. Browse through the [existing issues](https://github.com/rtCamp/mention-links/issues) for anything related to what you want to work on. If you don't find any related issues, open a new one.
 
 2. Fork this repository.
 
@@ -67,7 +67,7 @@ Once you're ready to send a pull request, please run through the following check
 
 == Important Links ==
 
-* [GitHub](https://github.com/rtCamp/wp-mention-links) - Please mention your wordpress.org username when sending pull requests.
+* [GitHub](https://github.com/rtCamp/mention-links) - Please mention your wordpress.org username when sending pull requests.
 
 == License ==
 
@@ -75,10 +75,10 @@ Same [GPL](http://www.gnu.org/licenses/gpl-2.0.txt) that WordPress uses!
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
 * Initial release
 
 == Upgrade Notice ==
  
-= 1.0 =
+= 1.0.1 =
 Initial release.
