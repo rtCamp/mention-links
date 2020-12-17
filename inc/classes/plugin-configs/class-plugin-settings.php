@@ -34,7 +34,25 @@ class Plugin_Settings {
 
 		add_action( 'admin_init', [ $this, 'admin_init' ] );
 		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+		add_action( 'admin_notices', [ $this, 'admin_notices' ] );
 
+	}
+
+	/**
+	 * Show notice after Mention Link option are saved.
+	 */
+	public function admin_notices() {
+
+		global $current_screen;
+
+		if ( ! empty( $current_screen ) && 'settings_page_wp-mention-links' === $current_screen->id ) {
+
+			$option = get_option( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME );
+
+			if ( empty( $option ) && 'true' === filter_input( INPUT_GET, 'settings-updated', FILTER_SANITIZE_STRING ) ) {
+				add_settings_error( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME, 'blank_settings_updated', __( 'If no options for Custom Post Types support is selected, default Posts and Pages will be used for Mention Links.', 'wp-mention-links' ), 'notice' );
+			}
+		}
 	}
 
 	/**
@@ -89,7 +107,7 @@ class Plugin_Settings {
 			[ $this, 'wpml_setting_section_cb' ],
 			MENTION_LINKS_PLUGIN_SLUG
 		);
-	
+
 		register_setting( MENTION_LINKS_PLUGIN_SLUG, MENTION_LINKS_FIELD_SETTING_NAME );
 		add_settings_field(
 			MENTION_LINKS_FIELD_SETTING_NAME,
@@ -150,7 +168,7 @@ class Plugin_Settings {
 	public function enabled_cpts_setting_cb( $args ) {
 
 		$option = get_option( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME );
-		
+
 		// Convert options array in key => value to increase performance.
 		if ( ! empty( $option ) && is_array( $option ) ) {
 			$array = $option;
@@ -172,7 +190,7 @@ class Plugin_Settings {
 			if ( 'attachment' === $key ) {
 				continue;
 			}
-		
+
 			$rest_base = $post_type->name;
 			// The mentions are going to use rest API eventually, so we won't show CPTs which doesn't have rest_base.
 			if ( ! empty( $post_type->rest_base ) ) {
@@ -180,7 +198,7 @@ class Plugin_Settings {
 			}
 
 			$checked = '';
-			
+
 			// Check if option value is already saved and current post type exists in the value array.
 			// Else check if option value is not already saved and check default supported post types.
 			if ( ! empty( $option[ $rest_base ] ) || ( ! is_array( $option ) && ! empty( $this->default_supported_post_types[ $post_type->name ] ) ) ) {
