@@ -2,9 +2,9 @@
 Contributors: rtcamp, sid177, dharmin
 Tags: Mentions, User mentions, Post mentions, Custom post types mentions, CPT mentions
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 7.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later (of course!)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,9 @@ Once you're ready to send a pull request, please run through the following check
 Same [GPL](http://www.gnu.org/licenses/gpl-2.0.txt) that WordPress uses!
 
 == Changelog ==
+
+= 1.0.2 =
+* Display notice when Custom Post Types support option are not selected.
 
 = 1.0.1 =
 * Initial release
