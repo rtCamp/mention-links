@@ -62,7 +62,7 @@ class Assets {
 		if ( ! empty( $supported_cpts ) && is_array( $supported_cpts ) ) {
 			$localize_data['supportedCPTs'] = $supported_cpts;
 		}
-		
+
 		$selected_field = get_option( MENTION_LINKS_FIELD_SETTING_NAME );
 		if ( ! empty( $selected_field ) ) {
 			$localize_data['selectedUserField'] = $selected_field;
