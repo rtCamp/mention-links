@@ -1,5 +1,5 @@
 === Mention Links ===
-Contributors: rtcamp, sid177, dharmin
+Contributors: rtcamp, sid177, dharmin, vaishu.agola27
 Tags: Mentions, User mentions, Post mentions, Custom post types mentions, CPT mentions
 Requires at least: 5.0
 Tested up to: 5.6

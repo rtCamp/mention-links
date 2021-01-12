@@ -7,7 +7,7 @@
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
 		"eslint:fix": "eslint --fix",
-		"language:make-po": "wp i18n make-pot ../ --exclude=\"assets\" ../languages/wp-mentions-links.po",
+		"language:make-po": "wp i18n make-pot ../ --exclude=\"assets\" ../languages/mentions-links.po",
 		"language": "run-s \"language:*\""
 	},
 	"keywords": [
