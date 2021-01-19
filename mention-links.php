@@ -2,13 +2,13 @@
 /**
  * Plugin Name: Mention Links
  * Description: Gutenberg autocomplete for posts and users. Type <code>@</code> to link to an author or <code>#</code> to link to a post, page, or custom post type.
- * Plugin URI:  https://github.com/rtCamp/wp-mention-links
+ * Plugin URI:  https://github.com/rtCamp/mention-links
  * Author:      rtCamp
  * Author URI:  https://rtcamp.com
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Version:     1.0.2
- * Text Domain: wp-mention-links
+ * Text Domain: mention-links
  *
  * @package wp-mention-links
  */
@@ -33,7 +33,7 @@ define( 'MENTION_LINKS_ENABLED_CPTS_SETTING_NAME', 'wpml_enabled_cpts' );
  * @return array Modified array of links.
  */
 function wp_mentions_links_plugin_action_links( $links ) {
-	$links[] = sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'options-general.php?page=' . MENTION_LINKS_PLUGIN_SLUG ) ), __( 'Settings', 'wp-mention-links' ) );
+	$links[] = sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'options-general.php?page=' . MENTION_LINKS_PLUGIN_SLUG ) ), __( 'Settings', 'mention-links' ) );
 
 	return $links;
 }
