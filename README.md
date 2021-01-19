@@ -19,7 +19,7 @@ This plugin lets you mention a user or a post (including Custom Post Types) in a
 
 **Requires PHP version:** 7.0
 
-**Stable tag:** 1.0.2
+**Stable tag:** 1.0.3
 
 **License:** GPLv2 or later (of course!)
 
