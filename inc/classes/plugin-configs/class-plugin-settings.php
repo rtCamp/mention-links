@@ -50,7 +50,7 @@ class Plugin_Settings {
 			$option = get_option( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME );
 
 			if ( empty( $option ) && 'true' === filter_input( INPUT_GET, 'settings-updated', FILTER_SANITIZE_STRING ) ) {
-				add_settings_error( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME, 'blank_settings_updated', __( 'If no options for Custom Post Types support is selected, Posts and Pages will be used for Mention Links.', 'wp-mention-links' ), 'notice' );
+				add_settings_error( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME, 'blank_settings_updated', __( 'If no options for Custom Post Types support is selected, Posts and Pages will be used for Mention Links.', 'mention-links' ), 'notice' );
 			}
 		}
 	}
@@ -88,7 +88,7 @@ class Plugin_Settings {
 				<?php
 				settings_fields( MENTION_LINKS_PLUGIN_SLUG );
 				do_settings_sections( MENTION_LINKS_PLUGIN_SLUG );
-				submit_button( __( 'Save Settings', 'wp-mention-links' ) );
+				submit_button( __( 'Save Settings', 'mention-links' ) );
 				?>
 			</form>
 		</div>
@@ -111,7 +111,7 @@ class Plugin_Settings {
 		register_setting( MENTION_LINKS_PLUGIN_SLUG, MENTION_LINKS_FIELD_SETTING_NAME );
 		add_settings_field(
 			MENTION_LINKS_FIELD_SETTING_NAME,
-			__( 'Display username or display-name', 'wp-mention-links' ),
+			__( 'Display username or display-name', 'mention-links' ),
 			[ $this, 'field_setting_cb' ],
 			MENTION_LINKS_PLUGIN_SLUG,
 			'wpml_setting_section',
@@ -121,7 +121,7 @@ class Plugin_Settings {
 		register_setting( MENTION_LINKS_PLUGIN_SLUG, MENTION_LINKS_ENABLED_CPTS_SETTING_NAME );
 		add_settings_field(
 			MENTION_LINKS_ENABLED_CPTS_SETTING_NAME,
-			__( 'Custom Post Types support', 'wp-mention-links' ),
+			__( 'Custom Post Types support', 'mention-links' ),
 			[ $this, 'enabled_cpts_setting_cb' ],
 			MENTION_LINKS_PLUGIN_SLUG,
 			'wpml_setting_section',
@@ -149,11 +149,11 @@ class Plugin_Settings {
 		$option = get_option( MENTION_LINKS_FIELD_SETTING_NAME );
 		?>
 		<select id="<?php echo esc_attr( MENTION_LINKS_FIELD_SETTING_NAME ); ?>" name="<?php echo esc_attr( MENTION_LINKS_FIELD_SETTING_NAME ); ?>">
-			<option value="displayname" <?php ( selected( $option, 'displayname' ) ); ?>><?php esc_html_e( 'Display Name', 'wp-mention-links' ); ?></option>
-			<option value="username" <?php ( selected( $option, 'username' ) ); ?>><?php esc_html_e( 'Username', 'wp-mention-links' ); ?></option>
+			<option value="displayname" <?php ( selected( $option, 'displayname' ) ); ?>><?php esc_html_e( 'Display Name', 'mention-links' ); ?></option>
+			<option value="username" <?php ( selected( $option, 'username' ) ); ?>><?php esc_html_e( 'Username', 'mention-links' ); ?></option>
 		</select>
 		<p class="description">
-			<?php esc_html_e( 'Whether to show user\'s display-name or username while mentioning them.', 'wp-mention-links' ); ?>
+			<?php esc_html_e( 'Whether to show user\'s display-name or username while mentioning them.', 'mention-links' ); ?>
 		</p>
 		<?php
 	}
@@ -229,7 +229,7 @@ class Plugin_Settings {
 
 		?>
 		<p class="description">
-			<?php esc_html_e( 'If a post type doesn\'t support REST API, then it won\'t be displayed here.', 'wp-mention-links' ); ?>
+			<?php esc_html_e( 'If a post type doesn\'t support REST API, then it won\'t be displayed here.', 'mention-links' ); ?>
 		</p>
 		<?php
 	}

@@ -1,10 +1,10 @@
 === Mention Links ===
-Contributors: rtcamp, sid177, dharmin
+Contributors: rtcamp, sid177, dharmin, vaishu.agola27
 Tags: Mentions, User mentions, Post mentions, Custom post types mentions, CPT mentions
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later (of course!)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,9 @@ Same [GPL](http://www.gnu.org/licenses/gpl-2.0.txt) that WordPress uses!
 
 == Changelog ==
 
+= 1.0.3 =
+* Update Text Domain.
+
 = 1.0.2 =
 * Display notice when Custom Post Types support option are not selected.
 
@@ -83,5 +86,5 @@ Same [GPL](http://www.gnu.org/licenses/gpl-2.0.txt) that WordPress uses!
 
 == Upgrade Notice ==
  
-= 1.0.1 =
-Initial release.
+= 1.0.3 =
+Update Text Domain.

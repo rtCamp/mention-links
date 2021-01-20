@@ -9,7 +9,7 @@ This plugin lets you mention a user or a post (including Custom Post Types) in a
 
 **Author:** rtCamp
 
-**Contributors:** rtcamp, sid177, dharmin, vaishaliagola27
+**Contributors:** rtcamp, sid177, dharmin, vaishu.agola27
 
 **Tags:** Mentions, User mentions, Post mentions, Custom post types mentions, CPT mentions
 
@@ -19,7 +19,7 @@ This plugin lets you mention a user or a post (including Custom Post Types) in a
 
 **Requires PHP version:** 7.0
 
-**Stable tag:** 1.0.2
+**Stable tag:** 1.0.3
 
 **License:** GPLv2 or later (of course!)
 
