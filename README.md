@@ -15,7 +15,7 @@ This plugin lets you mention a user or a post (including Custom Post Types) in a
 
 **Requires at least:** 5.0
 
-**Tested up to:** 5.6
+**Tested up to:** 5.7
 
 **Requires PHP version:** 7.0
 
