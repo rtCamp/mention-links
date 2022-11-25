@@ -3,11 +3,11 @@
  */
 const { test, expect } = require('@wordpress/e2e-test-utils-playwright');
 
-test.describe('Check Post Create setting', () => {
+test.describe('Check page Create setting', () => {
     test.beforeEach(async ({ admin }) => {
         await admin.visitAdminPage('options-general.php?page=wp-mention-links');
     });
-    test('Set Post only setting and validate mention in both end', async ({ admin, page, editor }) => {
+    test('Set page only setting and validate mention in both end', async ({ admin, page, editor }) => {
         // Focus
         await page.focus('#wpml_user_field_to_use');
         // Select username
@@ -36,16 +36,16 @@ test.describe('Check Post Create setting', () => {
         expect(await page.locator("label[for='pages_checkbox']").isChecked()).toBeTruthy();
         expect(await page.locator("label[for='posts_checkbox']").isChecked()).toBeFalsy();
     });
-    test('Create a new post and check username', async ({ admin, page, editor }) => {
+    test('Create a new page and check username', async ({ admin, page, editor }) => {
         // Create new post page
         await admin.visitAdminPage("post-new.php", "post_type=page");
         //await page.click('[aria-label="Close dialog"]'); // close dialog
         // Provide page title
-        await page.waitForSelector('role=textbox[name="Add title"i]');
+       // await page.waitForSelector('role=textbox[name="Add title"i]');
         await page.locator('role=textbox[name="Add title"i]').click();
         await page.type(
             ".editor-post-title__input",
-            "Dummy Post"
+            "Dummy page"
         ); // provide title name
 
         // Click on paragraph block
