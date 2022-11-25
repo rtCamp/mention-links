@@ -4,7 +4,7 @@ set -ex
 
 ######################################################
 ######################## VARS ########################
-SITE_NAME='mention-link.com'
+SITE_NAME='mention-links.com'
 SITE_ROOT="/var/www/$SITE_NAME/htdocs"
 SITE_URL="http://$SITE_NAME/"
 function ee() { wo "$@"; }
