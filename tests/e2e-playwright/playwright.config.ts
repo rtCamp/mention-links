@@ -26,7 +26,7 @@
          new URL( './config/global-setup.ts', 'file:' + __filename ).href
      ),
      use: {
-         baseURL: 'http://mention-links.com',
+         baseURL: 'http://mention-links.com/',
          headless: true,
          viewport: {
              width: 960,

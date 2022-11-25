@@ -39,7 +39,7 @@ test.describe('Check page Create setting', () => {
     test('Create a new page and check username', async ({ admin, page, editor }) => {
         // Create new post page
         await admin.visitAdminPage("post-new.php", "post_type=page");
-        await page.click('[aria-label="Close dialog"]'); // close dialog
+      //  await page.click('[aria-label="Close dialog"]'); // close dialog
         // Provide page title
        // await page.waitForSelector('role=textbox[name="Add title"i]');
         await page.locator('role=textbox[name="Add title"i]').click();
