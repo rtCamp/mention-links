@@ -2,15 +2,16 @@
  * WordPress dependencies
  */
 const { test, expect } = require('@wordpress/e2e-test-utils-playwright');
-
 test.describe('Check page Create setting', () => {
     test.beforeEach(async ({ admin }) => {
+
         await admin.visitAdminPage('options-general.php?page=wp-mention-links');
     });
     test('Set page only setting and validate mention in both end', async ({ admin, page, editor }) => {
-        // Focus
+       
+        // Focus and check element is present on the page.
         await page.focus('#wpml_user_field_to_use');
-        // Select username
+        // Select Displayname to validate
         await page.locator('#wpml_user_field_to_use').selectOption('displayname');
 
         // Check create new page 
