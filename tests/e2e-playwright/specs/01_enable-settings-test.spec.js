@@ -28,15 +28,13 @@ test.describe('Check settings page', () => {
         // ensure both element are checked
         if ( post_check == false){
             await page.locator("label[for='posts_checkbox']").check();
-        }else{
-            console.log("Already checked")
         }
+
 
         if (page_check == false) {
             await page.locator("label[for='pages_checkbox']").check();
-        } else {
-            console.log("Already checked")
-        }
+        } 
+
         // save and verify
         await page.locator("input[id='submit']").click();
         await page.focus("div[id='setting-error-settings_updated']");
