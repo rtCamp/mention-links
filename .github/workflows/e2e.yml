@@ -26,9 +26,8 @@ jobs:
       TESRESULT_TOKEN: ${{ secrets.TESRESULT_TOKEN }}
       TOKEN: ${{ secrets.GITHUB_TOKEN }}
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      
-    
+     steps:
+     
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -51,8 +50,8 @@ jobs:
         with:
           name: report
           path: ./tests/e2e-playwright/artifacts
-      
-       - name: run PR status
+
+      - name: run PR status
         if: ${{ always() }}
         run: node ./tests/e2e-playwright/bin/pr-status.js
         working-directory: ${{env.working_directory}}
