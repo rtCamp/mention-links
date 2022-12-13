@@ -47,16 +47,9 @@
          actionTimeout: 20_000, // 10 seconds.
          trace: 'retain-on-failure',
          screenshot: 'only-on-failure',
-         video: 'on-first-retry',
-         
-         
+         video: 'on-first-retry',    
      },
-    //  webServer: {
-    //      command: 'npm run wp-env start',
-    //      port: 8889,
-    //      timeout: 120_000, // 120 seconds.
-    //      reuseExistingServer: true,
-    //  },
+   
      projects: [
          {
              name: 'chromium',
