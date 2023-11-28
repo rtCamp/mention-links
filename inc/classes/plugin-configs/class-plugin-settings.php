@@ -49,7 +49,7 @@ class Plugin_Settings {
 
 			$option = get_option( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME );
 
-			if ( empty( $option ) && 'true' === filter_input( INPUT_GET, 'settings-updated', FILTER_SANITIZE_STRING ) ) {
+			if ( empty( $option ) && 'true' === filter_input( INPUT_GET, 'settings-updated', FILTER_SANITIZE_FULL_SPECIAL_CHARS ) ) {
 				add_settings_error( MENTION_LINKS_ENABLED_CPTS_SETTING_NAME, 'blank_settings_updated', __( 'If no options for Custom Post Types support is selected, Posts and Pages will be used for Mention Links.', 'mention-links' ), 'notice' );
 			}
 		}
