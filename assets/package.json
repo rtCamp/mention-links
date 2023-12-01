@@ -1,6 +1,6 @@
 {
 	"name": "wp-mention-links",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Gutenberg autocomplete for posts and users.",
 	"main": "src/js/index.js",
 	"scripts": {
