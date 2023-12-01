@@ -1,10 +1,10 @@
 === Mention Links ===
-Contributors: rtcamp, sid177, dharmin, vaishu.agola27
+Contributors: rtcamp, sid177, dharmin, vaishu.agola27, pavanpatil1, mukulsingh27
 Tags: Mentions, User mentions, Post mentions, Custom post types mentions, CPT mentions
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.4.1
 Requires PHP: 7.0
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later (of course!)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,10 @@ Same [GPL](http://www.gnu.org/licenses/gpl-2.0.txt) that WordPress uses!
 
 == Changelog ==
 
+= 1.0.4 =
+* Compatible with latest WordPress 6.4.1
+* Added PHP 8.1 compatibility.
+
 = 1.0.3 =
 * Update Text Domain.
 
@@ -86,5 +90,5 @@ Same [GPL](http://www.gnu.org/licenses/gpl-2.0.txt) that WordPress uses!
 
 == Upgrade Notice ==
  
-= 1.0.3 =
-Update Text Domain.
+= 1.0.4 =
+Mention Link 1.0.4 with PHP 8.1 Compatibility.
