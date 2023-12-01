@@ -76,7 +76,7 @@ Same [GPL](http://www.gnu.org/licenses/gpl-2.0.txt) that WordPress uses!
 == Changelog ==
 
 = 1.0.4 =
-* Compatible with latest WordPress 6.4.1
+* Compatible with the latest WordPress 6.4.1
 * Added PHP 8.1 compatibility.
 
 = 1.0.3 =
