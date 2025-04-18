@@ -1,62 +1,27 @@
 /**
  * WordPress dependencies
  */
-const { test, expect } = require('@wordpress/e2e-test-utils-playwright');
-
+const { test } = require('@wordpress/e2e-test-utils-playwright');
+const { MentionLinks } = require('../page/MentionLinks.js');
 test.describe('Check post Create setting', () => {
-    test.beforeEach(async ({ admin }) => {
-        await admin.visitAdminPage('options-general.php?page=wp-mention-links');
-    });
-    test('Set post only setting and validate displayname', async ({ admin, page, editor }) => {
-        // Focus
-        await page.focus('#wpml_user_field_to_use');
-        // Select displayname
-        await page.locator('#wpml_user_field_to_use').selectOption('displayname'); // displayname
-
-        // Check post page
-        const post_check = await page.locator("label[for='posts_checkbox']").isChecked();
-        const page_check = await page.locator("label[for='pages_checkbox']").isChecked();
-        //console.log(post_check, page_check);
-        // ensure both element are checked
-        if (post_check == false) {
-            await page.locator("label[for='posts_checkbox']").check();
-        } 
-    
-        if (page_check == true) {
-            await page.locator("label[for='pages_checkbox']").uncheck();
-        }
-        // save and verify
-        await page.locator("input[id='submit']").click();
-        await page.focus("div[id='setting-error-settings_updated']");
-
-        // Check for the final time the elements are saved after save button
-        expect(await page.locator("label[for='posts_checkbox']").isChecked()).toBeTruthy();
-        expect(await page.locator("label[for='pages_checkbox']").isChecked()).toBeFalsy();
+    test('Set post only setting and validate displayname', async ({ page }) => {
+        const mentionLinkobj = new MentionLinks(page);
+        await mentionLinkobj.navigateToSettingPage();
+        await mentionLinkobj.selectDisplayname();
+        await mentionLinkobj.checkOnlyPostCheckbox();
+        await mentionLinkobj.saveSettings();
+        await mentionLinkobj.validateOnlyPostChecked();
     });
     test('Create a new post and check mention in both end', async ({ admin, page, editor }) => {
-        // Create new post page
+        const mentionLinkobj = new MentionLinks(page);
+        // Create new post 
         await admin.createNewPost({ title: 'Dummy Post' });
         // Click on paragraph block
         await editor.insertBlock({
             name: "core/paragraph",
         });
-        // Validate backend
-        await page.keyboard.type("@automation");
-        await page.focus('div.popover-slot > div');
-        await page.locator('div.popover-slot > div').click();
-        //Validate frontend
-        // pusblish
-        await page.click(".editor-post-publish-panel__toggle");
-        // Double check, click again on publish button
-        await page.click(".editor-post-publish-button");
-        // A success notice should show up
-        page.locator(".components-snackbar");
-
-        await page.locator("a[class='components-button is-primary']").click();
-        await expect(page.locator("role=link[name='automation']").first()).not.toBeNull();
-        const locator = page.locator("role=link[name='automation']").first()
-        await expect(locator).toBeEnabled();
+        await mentionLinkobj.validateBackend();
+        await mentionLinkobj.publishPagePost();
+        await mentionLinkobj.validateFrontend();
     });
-
-
 });
